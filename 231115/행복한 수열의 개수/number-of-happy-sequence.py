@@ -11,7 +11,6 @@ for i in range(N) :
             temp.append(board[i][j])
             temp.append(board[i][j+1])
             if len(temp) == M :
-                
                 answer += 1
                 break
 for i in range(N) :
@@ -23,4 +22,11 @@ for i in range(N) :
             if len(temp) == M :
                 answer += 1
                 break
+arr = []
+if M == 1 :
+    for i in range(N) :
+        for j in range(N) :
+            arr.append(board[i][j])
+    arr = list(set(arr))
+    answer = len(arr)
 print(answer)
