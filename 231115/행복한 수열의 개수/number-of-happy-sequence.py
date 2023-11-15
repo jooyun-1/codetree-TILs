@@ -5,19 +5,22 @@ for n in range(N) :
     board.append(line)
 answer = 0
 for i in range(N) :
-    temp = 0
+    temp = []
     for j in range(N-1) :
         if board[i][j] == board[i][j+1] :
-            temp += 1
-            if temp == M-1 :
+            temp.append(board[i][j])
+            temp.append(board[i][j+1])
+            if len(temp) == M :
+                
                 answer += 1
                 break
 for i in range(N) :
-    temp = 0
+    temp = []
     for j in range(N-1) :
         if board[j][i] == board[j+1][i] :
-            temp += 1
-            if temp == M-1 :
+            temp.append(board[i][j])
+            temp.append(board[i][j+1])
+            if len(temp) == M :
                 answer += 1
                 break
 print(answer)
