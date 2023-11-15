@@ -24,9 +24,10 @@ for i in range(N) :
                 break
 arr = []
 if M == 1 :
-    for i in range(N) :
-        for j in range(N) :
-            arr.append(board[i][j])
-    arr = list(set(arr))
-    answer = len(arr)
+    answer = 2*N
+    # for i in range(N) :
+    #     for j in range(N) :
+    #         arr.append(board[i][j])
+    # arr = list(set(arr))
+    # answer = len(arr)
 print(answer)
