@@ -13,7 +13,8 @@ else :
             if board[i][j] == board[i][j+1] :
                 # print(i,j,board[i][j],board[i][j+1])
                 temp.append(board[i][j])
-                # temp.append(board[i][j+1])
+                if board[i][j+1] not in temp :
+                    temp.append(board[i][j+1])
                 if len(temp) == M :
                     # print(temp)
                     answer += 1
@@ -24,7 +25,8 @@ else :
         for j in range(N-1) :
             if board[j][i] == board[j+1][i] :
                 temp.append(board[i][j])
-                # temp.append(board[i][j+1])
+                if board[i][j+1] not in temp :
+                    temp.append(board[i][j+1])
                 if len(temp) == M :
                     answer += 1
                     break
