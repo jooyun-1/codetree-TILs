@@ -21,8 +21,10 @@ else :
                     answer += 1
                     # print(answer)
                     break
+            else :
+                cnt = 0
     for i in range(N) :
-        temp = []
+        cnt = 0
         for j in range(N-1) :
             if board[j][i] == board[j+1][i] :
                 cnt += 1
@@ -30,7 +32,8 @@ else :
                 # if board[i][j+1] not in temp :
                 #     temp.append(board[i][j+1])
                 if cnt == M-1 :
-
                     answer += 1
                     break
+            else :
+                cnt = 0
 print(answer)
