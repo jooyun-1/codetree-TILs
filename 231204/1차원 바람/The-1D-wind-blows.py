@@ -3,19 +3,19 @@ def move(row,dir) :
     if row >=0 and row < len(board) and visited[row] == 0 :
         visited[row] = 1
         if dir == 'L' :
-            temp_line = copy.deepcopy(board[row])
-            num = temp_line[-1]
-            for i in range(len(temp_line)-1) :
-                board[row][i+1] = temp_line[i]
-            board[row][0] = num
+            # temp_line = copy.deepcopy(board[row])
+            # num = temp_line[-1]
+            temp = board[row][-1]
+            for i in range(M-1,-1,-1) :
+                board[row][i] = board[row][i-1]
+            board[row][0] = temp
             # print(row,dir,board)
             check(row,dir)
         elif dir == 'R' :
-            temp_line = copy.deepcopy(board[row])
-            num = temp_line[0]
-            for i in range(len(temp_line)-1) :
-                board[row][i] = temp_line[i+1]
-            board[row][-1] = num
+            temp = board[row][0]
+            for i in range(1,M) :
+                board[row][i-1] = board[row][i]
+            board[row][-1] = temp
             # print(dir,board)
             check(row,dir)
             
