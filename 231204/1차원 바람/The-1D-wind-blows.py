@@ -1,10 +1,7 @@
-import copy
 def move(row,dir) :
     if row >=0 and row < len(board) and visited[row] == 0 :
         visited[row] = 1
         if dir == 'L' :
-            # temp_line = copy.deepcopy(board[row])
-            # num = temp_line[-1]
             temp = board[row][-1]
             for i in range(M-1,-1,-1) :
                 board[row][i] = board[row][i-1]
