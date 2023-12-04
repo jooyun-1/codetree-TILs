@@ -6,14 +6,14 @@ def move(row,dir) :
             for i in range(M-1,-1,-1) :
                 board[row][i] = board[row][i-1]
             board[row][0] = temp
-            # print(row,dir,board)
+
             check(row,dir)
         elif dir == 'R' :
             temp = board[row][0]
             for i in range(1,M) :
                 board[row][i-1] = board[row][i]
             board[row][-1] = temp
-            # print(dir,board)
+
             check(row,dir)
             
 
