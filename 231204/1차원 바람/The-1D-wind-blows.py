@@ -24,7 +24,7 @@ def check(row,dir) :
                 move(row-1,'R')
             elif dir == 'R' :
                 move(row-1,'L')
-        elif row + 1 < len(board) and board[row][i] == board[row+1][i] :
+        if row + 1 < len(board) and board[row][i] == board[row+1][i] :
             if dir == 'L' :
                 move(row+1,'R')
             elif dir == 'R' :
