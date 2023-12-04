@@ -21,20 +21,17 @@ def move(row,dir) :
             
 
 def check(row,dir) :
-    flag = False
-    arr = []
-    if row - 1 >= 0 and row + 1 < len(board) :
-        for i in range(len(board[row])) :
-            if board[row][i] == board[row-1][i] :
-                if dir == 'L' :
-                    move(row-1,'R')
-                elif dir == 'R' :
-                    move(row-1,'L')
-            elif board[row][i] == board[row+1][i] :
-                if dir == 'L' :
-                    move(row+1,'R')
-                elif dir == 'R' :
-                    move(row+1,'L')
+    for i in range(len(board[row])) :
+        if row - 1 >= 0 and board[row][i] == board[row-1][i] :
+            if dir == 'L' :
+                move(row-1,'R')
+            elif dir == 'R' :
+                move(row-1,'L')
+        elif row + 1 < len(board) and board[row][i] == board[row+1][i] :
+            if dir == 'L' :
+                move(row+1,'R')
+            elif dir == 'R' :
+                move(row+1,'L')
 
 N, M, Q = map(int,input().split())
 board = []
