@@ -21,11 +21,11 @@ def check(x,y) :
 
 for i in range(n) :
     total_flag = False
-    for j in range(m) :
+    for j in range(k,k+m) :
         result = check(i,j)
         if result :
             total_flag = True
-            board[i][:m] = [1] * m
+            board[i][k:k+m] = [1] * m
             break
     if total_flag :
         break
