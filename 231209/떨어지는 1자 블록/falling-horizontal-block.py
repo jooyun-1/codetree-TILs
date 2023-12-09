@@ -17,6 +17,8 @@ def check(x,y) :
             return flag
         else :
             return flag
+    else :
+        return True
     return flag
 
 for i in range(n) :
