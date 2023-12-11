@@ -13,11 +13,8 @@ def escape(x,y,cur_dir) :
         time = -1
         return
     dirs = [[0,1],[-1,0],[0,-1],[1,0]]
-    clock_dirs = [[0,1],[1,0],[0,-1],[1,0]]
     nx = x + dirs[cur_dir][0]
     ny = y + dirs[cur_dir][1]
-
-    visited.append([x,y])
 
     if 0 <= nx < N and 0 <= ny < N :
         if miro[nx][ny] == '#' :
@@ -28,9 +25,6 @@ def escape(x,y,cur_dir) :
             right_dir = cur_dir - 1
             if right_dir < 0 :
                 right_dir = 3
-            # right_dir = (cur_dir+1) % 4
-            # rx = nx + clock_dirs[right_dir][0]
-            # ry = ny + clock_dirs[right_dir][1]
             rx = nx + dirs[right_dir][0]
             ry = ny + dirs[right_dir][1]
             if 0 <= rx < N and 0 <= ry < N :
