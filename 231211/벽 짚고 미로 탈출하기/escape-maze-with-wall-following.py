@@ -22,6 +22,7 @@ def escape(x,y,cur_dir) :
     if 0 <= nx < N and 0 <= ny < N :
         if miro[nx][ny] == '#' :
             cur_dir = (cur_dir+1) % 4
+            visited[x][y] = 0
             escape(x,y,cur_dir)
         else :
             right_dir = cur_dir - 1
