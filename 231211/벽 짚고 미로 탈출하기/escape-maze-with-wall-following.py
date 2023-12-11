@@ -11,11 +11,6 @@ def escape(x,y,cur_dir) :
     if cnt >= 10000 or pos_check >= 10000:
         time = -1
         return
-    if visited[x][y] == 0 :
-        visited[x][y] = 1
-    else :
-        time = -1
-        return
     dirs = [[0,1],[-1,0],[0,-1],[1,0]]
     nx = x + dirs[cur_dir][0]
     ny = y + dirs[cur_dir][1]
@@ -23,7 +18,6 @@ def escape(x,y,cur_dir) :
     if 0 <= nx < N and 0 <= ny < N :
         if miro[nx][ny] == '#' :
             cur_dir = (cur_dir+1) % 4
-            visited[x][y] = 0
             pos_check += 1
             escape(x,y,cur_dir)
         else :
@@ -51,7 +45,6 @@ x, y = map(int,input().split())
 x -= 1
 y -= 1
 miro = []
-visited = [[0] * N for _ in range(N)]
 for n in range(N) :
     line = input().rstrip()
     temp = []
