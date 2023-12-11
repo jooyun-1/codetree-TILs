@@ -36,7 +36,8 @@ def escape(x,y,cur_dir) :
                     escape(rx,ry,right_dir)
     else :
         time += 1
-
+        return
+        
 N = int(input())
 x, y = map(int,input().split())
 x -= 1
@@ -46,7 +47,6 @@ visited = [[0] * N for _ in range(N)]
 for n in range(N) :
     line = input().rstrip()
     temp = []
-
     for i in range(len(line)) :
         temp.append(line[i])
     miro.append(temp)
