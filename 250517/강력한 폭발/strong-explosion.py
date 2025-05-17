@@ -21,8 +21,9 @@ for i in range(len(grid)) :
 bombs_length = len(arr)
 
 def count_blocks() :
-    temp = copy.deepcopy(grid)
-    que = copy.deepcopy(arr)
+    temp = [row[:] for row in grid]
+    que = arr[:]
+    
     block = 0
     index = 0
     while que :
